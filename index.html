@@ -14,11 +14,125 @@
     <meta name="twitter:description" content="Facilidex" />
     <meta name="og:description" content="Facilidex" />
     <meta name="twitter:card" content="summary" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover" />
+    <link href="styles/variables.css" rel="stylesheet" />
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/header.css" rel="stylesheet" />
 </head>
 
+<script>
+    const headerExpanded = 'header-expanded';
+    const noTransitions = 'no-transitions';
+    var resizeTimeout = null;
+    var width = window.innerWidth;
+
+    function onInit() {
+        onHeader();
+        addEventListener('resize', _ => onResize());
+    }
+
+    function onHeader() {
+        const menu = document.getElementById('menu');
+
+        menu.removeAttribute('disabled');
+        menu.title = document.body.hasAttribute(headerExpanded) ? 'Close' : 'Menu';
+        menu.ariaLabel = menu.title;
+    }
+
+    function onResize() {
+        if (width == window.innerWidth) {
+            return;
+        }
+
+        width = window.innerWidth;
+        document.body.setAttribute(noTransitions, '');
+
+        if (resizeTimeout) {
+            clearTimeout(resizeTimeout);
+        }
+
+        resizeTimeout = setTimeout(_ => {
+            document.body.removeAttribute(noTransitions);
+            resizeTimeout = null;
+        }, 100);
+    }
+
+    function toggleHeader() {
+        document.body.toggleAttribute(headerExpanded);
+        onHeader();
+    }
+
+    if (document.readyState === 'complete') {
+        onInit();
+    } else {
+        addEventListener('DOMContentLoaded', _ => onInit());
+    }
+</script>
+
 <body>
-    Facilidex
+    <header>
+        <nav>
+            <div class="nav-title">
+                <a href="/" title="Facilidex" class="home">
+                    <picture>
+                        <source srcset="/assets/LogoDark.svg" media="(prefers-color-scheme: dark)" />
+                        <img src="/assets/LogoLight.svg" height="28"/>
+                    </picture>
+                </a>
+
+                <button type="button" class="menu" id="menu" onclick="toggleHeader()" disabled></button>
+
+                <div class="nav-large-content">
+                    <a href="/company/">Our Company</a>
+                    <a href="/services/">Services</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="mailto:contact@facilidex.com">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="nav-small-content">
+                <a href="/company/">Our Company</a>
+                <a href="/services/">Services</a>
+                <a href="/sectors/">Sectors</a>
+                <a href="mailto:contact@facilidex.com">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="header-overlay" onclick="toggleHeader()"></div>
+
+    <main>
+        <noscript>
+            <div class="noscript">
+                <section>JavaScript is disabled in your browser. Please enable JavaScript for the best experience.</section>
+            </div>
+        </noscript>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Your assets,<br>under control.</h1>
+                <p class="hero-detail">Consultancy specialising in comprehensive asset verification, dilapidation reporting and seamless contract mobilisation.</p>
+                <div class="hero-links">
+                    <a href="mailto:contact@facilidex.com" class="button prominent">Contact Us</a>
+                    <a href="/services/" class="button">Explore Services</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="background-image">
+            <div class="background-content"></div>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2 class="hero-title">Reduce risk,<br>save money.</h2>
+                    <p class="hero-detail">Facilidex is an independent facilities management and life cycle cost consultancy, delivering specialist expertise and trusted guidance to client organisations across all sectors.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
 </body>
 
 </html>

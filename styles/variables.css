@@ -1,0 +1,74 @@
+:root {
+    /* Sizes */
+    --control-length: 48px;
+    --desktop-width: 640px;
+
+    /* Colors */
+    --brand-color: #00BDB3;
+    --page-color: white;
+    --primary-color: black;
+    --primary-disabled-color: rgba(0, 0, 0, 0.25);
+    --background-color: rgba(245, 248, 247, 0.8);
+    --border-color: rgba(143, 143, 143, 0.25);
+    --hover-color: rgba(0, 0, 0, 0.1);
+
+    /* Easing Functions */
+    --default-easing: cubic-bezier(0.21, 0.21, 0.17, 1);
+    --bouncy-easing: cubic-bezier(0.25, 1.25, 0.5, 1);
+    --default-linear-easing: linear(
+        0, 0.00495 1.03%, 0.01988 2.14%, 0.08097 4.69%, 0.46668 15.742%,
+        0.56317 18.892%, 0.64548 22.002%, 0.71683 25.203%, 0.77784 28.533%,
+        0.82923 32.033%, 0.87207 35.774%, 0.90918 40.104%, 0.93837 44.894%,
+        0.96052 50.285%, 0.97664 56.516%, 0.98722 63.556%, 0.99401 72.257%, 0.9995
+    );
+    --bouncy-linear-easing: linear(
+        0, 0.00651 1.41%, 0.02602 2.91%, 0.05885 4.53%, 0.10605 6.321%,
+        0.20936 9.521%, 0.5577 19.292%, 0.65798 22.512%, 0.74244 25.623%,
+        0.81206 28.643%, 0.87034 31.703%, 0.91827 34.853%, 0.95674 38.154%,
+        0.98593 41.604%, 1.00701 45.315%, 1.02064 49.395%, 1.02739 54.025%,
+        1.02713 60.856%, 1.0069 83.198%, 1.00014
+    );
+
+    /* Animations */
+    --default-animation: 0.4s var(--default-easing);
+    --fast-animation: 0.2s var(--default-easing);
+    --bouncy-animation: 0.4s var(--bouncy-easing);
+}
+
+@supports(transition-timing-function: var(--default-linear-easing)) {
+    :root {
+        --default-easing: var(--default-linear-easing);
+        --bouncy-easing: var(--bouncy-linear-easing);
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    :root {
+        --default-animation: 0s linear;
+        --fast-animation: 0s linear;
+        --bouncy-animation: 0s linear;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --page-color: black;
+        --primary-color: white;
+        --primary-disabled-color: rgba(255, 255, 255, 0.25);
+        --background-color: rgba(23, 25, 24, 0.75);
+        --border-color: rgba(119, 119, 119, 0.3);
+        --hover-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+@media screen and (prefers-contrast: more) {
+    :root {
+        --border-color: rgba(143, 143, 143, 0.5);
+    }
+}
+
+@media screen and (prefers-contrast: more) and (prefers-color-scheme: dark) {
+    :root {
+        --border-color: rgba(119, 119, 119, 0.6);
+    }
+}
