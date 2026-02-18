@@ -1,16 +1,28 @@
 :root {
     /* Sizes */
+    --button-padding: min(20px, max(12px, calc(20svw - 56px)));
     --control-length: 48px;
     --desktop-width: 640px;
+    --header-length: 56px;
+    --header-margin: 8px;
+    --main-top-padding: calc(var(--header-length) + (2 * var(--header-margin)));
+    --medium-avatar-length: max(80px, min(25vw, 30vh, 160px));
+    --large-avatar-length: max(80px, min(25vw, 160px));
+    --section-vertical-padding: min(48px, max(7.5svh, 24px));
 
     /* Colors */
     --brand-color: #00BDB3;
-    --page-color: white;
-    --primary-color: black;
-    --primary-disabled-color: rgba(0, 0, 0, 0.25);
-    --background-color: rgba(245, 248, 247, 0.8);
-    --border-color: rgba(143, 143, 143, 0.25);
-    --hover-color: rgba(0, 0, 0, 0.1);
+    --red-color: #f04c5a;
+    --light-color: #f6f9fb;
+
+    /* Semantic Colors */
+    --page-color: #f1f4f6;
+    --dim-page-color: #e5e8eb;
+    --primary-color: #25282a;
+    --primary-disabled-color: rgba(0 0 0 / 0.25);
+    --secondary-color: #7e8183;
+    --background-color: rgba(255 255 255 / 0.8);
+    --border-color: rgba(143 143 143 / 0.25);
 
     /* Easing Functions */
     --default-easing: cubic-bezier(0.21, 0.21, 0.17, 1);
@@ -30,9 +42,12 @@
     );
 
     /* Animations */
-    --default-animation: 0.4s var(--default-easing);
-    --fast-animation: 0.2s var(--default-easing);
-    --bouncy-animation: 0.4s var(--bouncy-easing);
+    --default-animation-timing: 0.4s;
+    --fast-animation-timing: 0.4s;
+
+    --default-animation: var(--default-animation-timing) var(--default-easing);
+    --fast-animation: var(--fast-animation-timing) var(--default-easing);
+    --bouncy-animation: var(--default-animation-timing) var(--bouncy-easing);
 }
 
 @supports(transition-timing-function: var(--default-linear-easing)) {
@@ -52,12 +67,13 @@
 
 @media screen and (prefers-color-scheme: dark) {
     :root {
-        --page-color: black;
-        --primary-color: white;
+        --page-color: #141618;
+        --dim-page-color: #0f1112;
+        --primary-color: var(--light-color);
         --primary-disabled-color: rgba(255, 255, 255, 0.25);
-        --background-color: rgba(23, 25, 24, 0.75);
+        --secondary-color: #7e8183;
+        --background-color: rgba(32 34 36 / 0.7);
         --border-color: rgba(119, 119, 119, 0.3);
-        --hover-color: rgba(255, 255, 255, 0.1);
     }
 }
 
