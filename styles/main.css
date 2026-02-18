@@ -136,7 +136,6 @@ footer * {
 }
 
 .section-title {
-    /* font-size: max(40px, min(12.5vw, 15vh, 80px)); */
     font-size: max(40px, min(7.5vw, 12.5vh, 64px));
     line-height: 1;
     margin: 24px 0;
@@ -238,10 +237,16 @@ footer * {
     font-size: 20px;
 }
 .person-detail {
-    font-size: 20px;
+    font-size: 18px;
     margin: 8px 0;
     max-width: 744px;
     text-align: start;
+}
+
+@media screen and (min-width: 640px) {
+    .section-detail {
+        font-size: 20px;
+    }
 }
 
 hgroup {
