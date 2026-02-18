@@ -7,7 +7,7 @@
     --header-margin: 8px;
     --main-top-padding: calc(var(--header-length) + (2 * var(--header-margin)));
     --medium-avatar-length: max(80px, min(25vw, 30vh, 160px));
-    --large-avatar-length: max(80px, min(25vw, 160px));
+    --large-avatar-length: max(128px, min(40vw, 160px));
     --section-vertical-padding: min(48px, max(7.5svh, 24px));
 
     /* Colors */
