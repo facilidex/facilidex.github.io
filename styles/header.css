@@ -153,9 +153,9 @@ header a {
 
 .home * {
     cursor: pointer;
-    user-select: none;
+    /* user-select: none; */
     -webkit-user-drag: none;
-    -webkit-user-select: none;
+    /* -webkit-user-select: none; */
 }
 
 .home:hover {

@@ -7,6 +7,7 @@
     font-style: normal;
     font-variation-settings: "wdth" 100, "YTLC" 500;
     line-height: 1.35;
+    -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: none;
 }
 
@@ -62,6 +63,7 @@ main {
 
 section {
     display: flex;
+    flex-direction: column;
     min-height: calc(100vh - var(--main-top-padding));
 }
 
@@ -133,6 +135,8 @@ footer * {
 
 .section-content {
     margin: auto;
+    max-width: 892px;
+    width: 100%;
 }
 
 .section-title {
@@ -238,7 +242,7 @@ footer * {
 }
 .person-detail {
     font-size: 18px;
-    margin: 8px 0;
+    margin: 8px auto;
     max-width: 744px;
     text-align: start;
 }
@@ -339,4 +343,108 @@ textarea {
 
 .secondary {
     color: var(--secondary-color);
+}
+
+.services-list {
+    display: grid;
+    gap: 8px;
+    margin: 24px auto;
+    max-width: 400px;
+    padding: 0;
+    text-align: start;
+    width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+    .services-list {
+        grid-template-columns: 1fr 1fr;
+        max-width: 752px;
+    }
+}
+
+.services-list li {
+    align-items: end;
+    background-color: var(--background-color);
+    border-radius: 28px;
+    color: var(--primary-color);
+    display: flex;
+    font-size: 20px;
+    line-height: 23px;
+    padding: 16px;
+    width: 100%;
+}
+
+.services-list li::before {
+    background: url(/assets/CheckmarkCircle.svg);
+    background-repeat: no-repeat;
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    height: 24px;
+    margin: auto 12px auto 0;
+    width: 24px;
+}
+
+.service {
+    margin: 24px 0;
+}
+
+.service-image {
+    aspect-ratio: 4/3;
+    border-radius: 28px;
+    flex-shrink: 0;
+    height: auto;
+    margin: 24px auto;
+    max-width: 512px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.service-image img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.service-content {
+    flex: 1;
+}
+
+.service-title {
+    font-size: 24px;
+}
+
+.service-detail {
+    font-size: 18px;
+    margin: 8px auto;
+    max-width: 744px;
+    text-align: start;
+}
+ul.service-detail {
+    padding-left: 24px;
+}
+
+@media screen and (min-width: 832px) {
+    .service {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    .service.inverse {
+        flex-direction: row-reverse;
+    }
+
+    .service-image {
+        margin-left: 0;
+        margin-right: 0;
+        height: min-content;
+        max-width: 448px;
+        width: calc(50% - 12px);
+    }
+
+    .service-title {
+        flex: 1;
+        text-align: start;
+    }
 }

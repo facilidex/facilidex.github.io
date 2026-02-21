@@ -23,6 +23,181 @@
     <link href="/styles/header.css" rel="stylesheet" />
 </head>
 
+<script>
+    const headerExpanded = 'header-expanded';
+    const noTransitions = 'no-transitions';
+    var resizeTimeout = null;
+    var width = window.innerWidth;
+
+    function onInit() {
+        onHeader();
+        addEventListener('resize', _ => onResize());
+        setCurrentYear();
+    }
+
+    function onHeader() {
+        const menu = document.getElementById('menu');
+
+        menu.removeAttribute('disabled');
+        menu.title = document.body.hasAttribute(headerExpanded) ? 'Close' : 'Menu';
+        menu.ariaLabel = menu.title;
+    }
+
+    function onResize() {
+        if (width == window.innerWidth) {
+            return;
+        }
+
+        width = window.innerWidth;
+        document.body.setAttribute(noTransitions, '');
+
+        if (resizeTimeout) {
+            clearTimeout(resizeTimeout);
+        }
+
+        resizeTimeout = setTimeout(_ => {
+            document.body.removeAttribute(noTransitions);
+            resizeTimeout = null;
+        }, 100);
+    }
+
+    function setCurrentYear() {
+        const elements = document.getElementsByClassName('current-year');
+        const currentYear = new Date().getFullYear().toString();
+
+        for (const element of elements) {
+            element.textContent = currentYear;
+        };
+    }
+
+    function toggleHeader() {
+        document.body.toggleAttribute(headerExpanded);
+        onHeader();
+    }
+
+    if (document.readyState === 'complete') {
+        onInit();
+    } else {
+        addEventListener('DOMContentLoaded', _ => onInit());
+    }
+</script>
+
 <body>
-    Services
+    <header>
+        <nav>
+            <div class="nav-title">
+                <a href="/" title="Facilidex" class="home">
+                    <picture>
+                        <source srcset="/assets/LogoDark.svg" media="(prefers-color-scheme: dark)" />
+                        <img src="/assets/LogoLight.svg" height="28"/>
+                    </picture>
+                </a>
+
+                <button type="button" class="menu" id="menu" onclick="toggleHeader()" disabled></button>
+
+                <div class="nav-large-content">
+                    <a href="/services/">Services</a>
+                    <a href="/about/">Our Team</a>
+                    <a href="/contact/">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="nav-small-content">
+                <a href="/services/">Services</a>
+                <a href="/about/">Our Team</a>
+                <a href="/contact/">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="header-overlay" onclick="toggleHeader()"></div>
+
+    <main>
+        <noscript>
+            <div class="noscript">JavaScript is disabled in your browser. Please enable JavaScript for the best experience.</div>
+        </noscript>
+
+        <section>
+            <div class="section-content">
+                <h1 class="section-title">Services</h1>
+                <p class="section-detail">Our services deliver accurate asset verification, condition reporting, and site issue assessments to support efficient facility management and cost planning. Each service provides your business with clear, structured data to simplify mobilisation, maintenance decisions, and future works forecasting.</p>
+                <ul class="services-list">
+                    <li>On-Site Auditing</li>
+                    <li>Asset Verification</li>
+                    <li>MEP Condition Reporting</li>
+                    <li>Issue Reporting</li>
+                </ul>
+            </div>
+            <div class="service">
+                <div class="service-image">
+                    <img src="/assets/Background1.jpg"/>
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Asset Verification</h2>
+                    <p class="service-detail">Detailed asset verification sent in excel format for seamless mobilisation and CAFM upload, capturing information including:</p>
+                    <ul class="service-detail">
+                        <li>Make/model/serial numbers</li>
+                        <li>Data plate photos</li>
+                        <li>Location</li>
+                        <li>Limited access, such as access panels and high level including accurrate floor to ceiling height</li>
+                        <li>Critical plant</li>
+                        <li>Specialists required per asset for easy subcontractor costing</li>
+                        <li>Parent/child assets for linked systems such as splits and VRVs</li>
+                        <li>Out of hours</li>
+                        <li>SFG20 codes (subject to access to company SFG20)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service inverse">
+                <div class="service-image">
+                    <img src="/assets/Background2.jpg"/>
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">MEP Condition Reporting</h2>
+                    <p class="service-detail">Condition report to aid with budgeting and service costs:</p>
+                    <ul class="service-detail">
+                        <li>RAG style reporting of plant condition with optional budgets</li>
+                        <li>Red: immediate remedial works required</li>
+                        <li>Amber: works expected within 1-2 years</li>
+                        <li>Green: no considerable works expected for 4+ years</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service">
+                <div class="service-image">
+                    <img src="/assets/Background1.jpg"/>
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Other Services</h2>
+                    <p class="service-detail">Issues report created on site walk around to highlight potential problems relating to FRAs, LRAs and general works. This simple report will demonstrate an open mind to your customer and create an easy in road to quoted works.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="background-image background-2">
+            <div class="background-content"></div>
+            <section>
+                <div class="section-content">
+                    <h2 class="section-title">Smarter facilities management starts here.</h2>
+                    <p class="section-detail">Contact us to explore our technology-driven asset verification solutions for your business that prioritise compliance, help reduce costs, and support reliable long-term performance.</p>
+                    <div class="section-links">
+                        <a href="/contact/" class="button">Enquire Now</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/services/">Services</a>
+            <a href="/about/">Our Team</a>
+            <a href="/contact/">Contact Us</a>
+            <a href="https://www.instagram.com/facilidex" target="_blank">Instagram</a>
+        </div>
+        <div class="footer-copyright">&copy; <span class="current-year">2026</span> Facilidex Ltd</div>
+    </footer>
 </body>
+
+</html>

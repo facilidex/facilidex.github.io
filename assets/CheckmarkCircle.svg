@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>CheckmarkCircle</title>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CheckmarkCircle">
+            <circle id="Circle" fill="#00BDB3" cx="12" cy="12" r="12"></circle>
+            <path d="M16.17863,7.42960419 C16.4936509,6.97597408 17.1167657,6.86360913 17.5703958,7.17863003 C17.9891313,7.46941856 18.1170846,8.02272493 17.8865196,8.46292071 L17.82137,8.57039581 L11.57137,17.5703958 C11.2325351,18.0583181 10.5543786,18.1388418 10.1115445,17.7698959 L10.0204628,17.6839411 L6.2704628,13.6839411 C5.89273254,13.2810289 5.9131466,12.6481931 6.31605887,12.2704628 C6.68797789,11.9217887 7.25580809,11.9123619 7.63806095,12.2298761 L7.7295372,12.3160589 L10.634,15.414 L16.17863,7.42960419 Z" id="Checkmark" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>
