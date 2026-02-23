@@ -364,12 +364,13 @@ textarea {
 
 .services-list li {
     align-items: end;
-    background-color: var(--background-color);
     border-radius: 28px;
     color: var(--primary-color);
     display: flex;
     font-size: 20px;
     line-height: 23px;
+    outline: 1px solid var(--border-color);
+    outline-offset: -1px;
     padding: 16px;
     width: 100%;
 }
@@ -396,6 +397,8 @@ textarea {
     height: auto;
     margin: 24px auto;
     max-width: 512px;
+    outline: 1px solid var(--border-color);
+    outline-offset: -1px;
     overflow: hidden;
     width: 100%;
 }
@@ -412,6 +415,7 @@ textarea {
 
 .service-title {
     font-size: 24px;
+    margin: 16px 0;
 }
 
 .service-detail {
@@ -445,6 +449,7 @@ ul.service-detail {
 
     .service-title {
         flex: 1;
+        margin: 24px 0 12px 0;
         text-align: start;
     }
 }
