@@ -7,7 +7,7 @@
     <link rel="canonical" href="https://www.facilidex.com" />
     <meta name="twitter:url" content="https://www.facilidex.com" />
     <meta name="og:url" content="https://www.facilidex.com" />
-    <title>Facilidex · Our Team</title>
+    <title>{{ page.title }}</title>
     <meta name="twitter:title" content="Facilidex" />
     <meta name="og:title" content="Facilidex" />
     <meta name="description" content="Facilidex" />
@@ -117,50 +117,14 @@
             <div class="noscript">JavaScript is disabled in your browser. Please enable JavaScript for the best experience.</div>
         </noscript>
 
-        <section>
-            <div class="section-content">
-                <h1 class="section-title">Our Team</h1>
-
-                <div class="person-section">
-                    <img class="person" src="/assets/joe.jpg" alt=""/>
-                    <hgroup>
-                        <h2 class="person-title">Joe Perry</h2>
-                        <p class="person-subtitle">Company Director</p>
-                    </hgroup>
-                    <p class="person-detail">Specialising in asset verification services for the facilities management industry, bringing over 15 years of hands-on and leadership experience across complex commercial environments.</p>
-                    <p class="person-detail">Originally qualifying as an HVAC engineer, I began my career as a mobile engineer before progressing through supervisory and management roles. This included serving as Site Supervisor on a large, high-end estate, where I was responsible for operational delivery, compliance, and asset performance across critical systems.</p>
-                    <p class="person-detail">I later advanced into a Contract Manager role, overseeing diverse portfolios and multidisciplinary teams while maintaining a strong focus on accuracy, risk reduction, and lifecycle asset management. This progression has given me a deep understanding of FM operations from both a technical and commercial perspective.</p>
-                    <p class="person-detail">My background enables me to bridge the gap between engineering, compliance, and management by delivering precise, reliable asset verification that supports informed decision-making, regulatory compliance, and long-term asset value for FM clients.</p>
-                </div>
-
-                <div class="person-section">
-                    <img class="person" src="/assets/ciaran.jpg" alt=""/>
-                    <hgroup>
-                        <h2 class="person-title">Ciaran O'Brien</h2>
-                        <p class="person-subtitle">Company Director</p>
-                    </hgroup>
-                    <p class="person-detail">Graduating from the University of Nottingham in 2019 with a degree in Mathematics provided a strong analytical foundation for a career in technology. This led to an initial role as a Software Developer within a leading car finance company, delivering reliable, data-focused systems with an emphasis on accuracy, stability, and practical operational value.</p>
-                    <p class="person-detail">I later moved into a combined Business Analyst and Software Developer role at Rothschild & Co, working on systems that required both technical delivery and a clear understanding of business priorities. This experience strengthened my ability to turn operational requirements into effective technical solutions, with particular attention to data quality and risk awareness.</p>
-                    <p class="person-detail">This experience directly supports the development of tailored technology designed around the needs of FM clients. By combining analytical thinking, software development expertise, and commercial awareness, I deliver tools that improve compliance visibility, support service continuity, and enable clients to make more confident decisions about their assets.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="background-image background-2">
-            <div class="background-content"></div>
-            <section>
-                <div class="section-content">
-                    <h2 class="section-title">Smarter facilities management starts here.</h2>
-                    <p class="section-detail">Contact us to explore our technology-driven asset verification solutions for your business that prioritise compliance, help reduce costs, and support reliable long-term performance.</p>
-                    <div class="section-links">
-                        <a href="/contact/" class="button">Enquire Now</a>
-                    </div>
-                </div>
-            </section>
-        </div>
+        {{ content }}
     </main>
 
     <footer>
+        <div class="footer-accreditation">
+            <img src="/assets/SafeContractor.png" alt="SafeContractor seal of approval" class="footer-accreditation-item" loading="lazy"/>
+        </div>
+
         <div class="footer-links">
             <a href="/">Home</a>
             <a href="/services/">Services</a>
@@ -168,6 +132,7 @@
             <a href="/contact/">Contact Us</a>
             <a href="https://www.instagram.com/facilidex" target="_blank">Instagram</a>
         </div>
+
         <div class="footer-copyright">&copy; <span class="current-year">2026</span> Facilidex Ltd</div>
     </footer>
 </body>

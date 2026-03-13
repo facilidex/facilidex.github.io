@@ -1,0 +1,12 @@
+title: Facilidex
+email: contact@facilidex.com
+description: >-
+  Proactive asset management across Greater London, specialising in asset
+  verification, compliance continuation, condition reporting, and
+  forward-thinking budget planning. Our bespoke technology solutions
+  empower businesses to make confident, data-driven decisions.
+baseurl: ""
+url: "https://www.facilidex.com"
+
+exclude:
+  - README.md
