@@ -199,6 +199,7 @@ footer * {
     font-weight: 600;
     padding: 16px calc(env(safe-area-inset-right) + 16px) 16px calc(env(safe-area-inset-left) + 16px);
     text-align: center;
+    text-wrap-style: pretty;
 }
 
 .section-background {
